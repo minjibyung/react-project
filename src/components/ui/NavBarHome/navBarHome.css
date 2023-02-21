@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+}
+
+.header {
+  list-style: none;
+  display: flex;
+}
+
+nav {
+  list-style: none;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  float: top;
+  background:#000;
+}
+
+li {
+  text-decoration: none;
+  color: #fff;
+  padding: 13px;
+  display: block;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 5px;
+  position: relative;
+  list-style: none;
+}
+:link{
+  text-decoration: none;
+}
+
+img {
+  border-radius: 30px;
+  width: 70px;
+  height: 70px;
+  margin-top: -70px;
+  display: flex;
+  float: right;
+  vertical-align: middle;
+}
