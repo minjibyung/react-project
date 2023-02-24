@@ -9,8 +9,10 @@ export const ChangeColor = () => {
 
   return (
     <>
-      <div ref={container} className="object"><p>Color</p></div>
+      <div ref={container} className="object"><p>Color</p>
       <input onChange={handleChangeColor} type="color" name="" id="input-color" />
+      </div>
     </>
   )
-}
+  }
+                                                                  

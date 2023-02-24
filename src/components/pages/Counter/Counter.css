@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0
+}
+body{
+    background-color: rgb(222, 195, 247);
+}
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+button{
+    border-radius: 15px;
+    border: solid #fff;
+    height: 18%;
+    width: 60%;
+    font-size: larger;
+    margin-top: 50px;
+    color:#fff;
+    background-color:black;
+}
+
+.counter{
+    margin-top: 125px;
+    margin-left: 43%;
+    height: 230px;
+    width: 15rem;
+    background-color:rgb(171, 194, 218);
+    border-radius: 30px;
+    border: solid #000;
+}
+
