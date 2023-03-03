@@ -11,6 +11,8 @@ import { ChangeColor } from './components/pages/ChangeColor/ChangeColor';
 
 import { Counter } from './components/pages/Counter/Counter';
 
+import { Tweet } from './components/pages/Tweet/Tweet';
+
 import { NotFound } from './components/pages/NotFound/NotFound';
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
         <Route path='/contactUS' element={<ContactUS />} />
         <Route path='/ChangeColor' element={<ChangeColor />} />
         <Route path='/Counter' element={<Counter />} />
+        <Route path='/Tweet' element={<Tweet />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
