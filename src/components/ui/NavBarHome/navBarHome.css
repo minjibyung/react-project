@@ -3,13 +3,10 @@
   padding: 0;
 }
 
-body {
-  background: #fff;
-}
-
 .header {
   list-style: none;
   display: flex;
+
 }
 
 nav {
@@ -19,8 +16,8 @@ nav {
   text-align: center;
   float: top;
   background:#000;
-}
 
+}
 li {
   text-decoration: none;
   color: #fff;
@@ -42,7 +39,6 @@ img {
   width: 70px;
   height: 70px;
   margin-top: -70px;
-  display: flex;
   float: right;
   vertical-align: middle;
 }

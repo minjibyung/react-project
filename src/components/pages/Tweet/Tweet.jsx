@@ -1,50 +1,46 @@
-import React, { useState } from 'react';
-import './Tweet.css';
+import { useState, useRef } from "react"
+import { ContainerTweet } from "./components/ContainerTweet/ContainerTweet"
+import { Tweet } from "./components/Tweet/Tweet";
+let tweets = [];
 
-export const Tweet = () => {
+function App() {
 
-    const [tweetText, setTweetText] = useState('');
-    const [archivedTweets, setArchivedTweets] = useState([]);
-    const [tweetsToPublish, setTweetsToPublish] = useState([]);
+  // 1. Crear referencia del textArea
+  const TA = useRef();
+  const[message,setMessage] = useState("Tweet Actual")
+  const getMessage = () =>{
+    setMessage(TA.current.value)
+  }
+  // 2. crear una variable de estado que será la que publicará el tweet
   
-    const generateTweet = () => {
-      if (tweetText.length <= 255) {
-        setArchivedTweets([...archivedTweets, tweetText]);
-        setTweetText('');
-      } else {
-        alert('Tweet too long! Maximum length is 255 characters.');
-      }
-    };
-  
-    const publishTweets = () => {
-      setTweetsToPublish([...tweetsToPublish, ...archivedTweets]);
-      setArchivedTweets([]);
-    };
-  
-    return (
-      <div className="container">
-        <h2>Tweet Generator</h2>
-        <textarea
-          value={tweetText}
-          onChange={(event) => setTweetText(event.target.value)}
-        />
-        <p>{tweetText.length}/255</p>
-        <button onClick={generateTweet}>Generate Tweet</button>
-        <hr />
-        <h3>Archived Tweets</h3>
-        <ul>
-          {archivedTweets.map((tweet) => (
-            <li key={tweet}>{tweet}</li>
-          ))}
-        </ul>
-        <button onClick={publishTweets}>Publish Tweets</button>
-        <hr />
-        <h3>Tweets to Publish</h3>
-        <ul>
-          {tweetsToPublish.map((tweet) => (
-            <li key={tweet}>{tweet}</li>
-          ))}
-        </ul>
-      </div>
-    );
-          }
+  //3. Crear la función que envíe los tweets
+  // const handleSendTweet = () => {        
+  //   setTw(TA.current.value)
+  //   TA.current.value = '';
+    
+  // }
+
+  return (
+    <div className="App">
+      <h1>Generador de Tweets</h1>
+      <ContainerTweet
+       contain = {
+        <Tweet
+          eventTweet = {getMessage}
+          refTextArea = {TA}
+          eventArea = {message}
+          // eventFile = {}
+          // eventList = {}
+          // eventMessage = {} 
+          // counter = {}
+          // styleCounter = {} 
+        />}
+      />
+      <h3>Aquí se verán tus tweets archivados</h3>
+      
+      {/* <button className="btn-clear" onClick={()=> {}}>Clear</button> */}
+    </div>
+  )
+}
+
+export default App
